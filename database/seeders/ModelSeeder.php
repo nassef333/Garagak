@@ -5,7 +5,7 @@ namespace Database\Seeders;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
 
-class CarSeeder extends Seeder
+class ModelSeeder extends Seeder
 {
     /**
      * Run the database seeds.
@@ -46,9 +46,10 @@ class CarSeeder extends Seeder
                 ->value('id');
 
             foreach ($carInfo['models'] as $modelName) {
-                DB::table('cars')->insert([
+                DB::table('models')->insert([
                     'name' => $modelName,
                     'car_series_id' => $seriesId,
+                    'description' => "Fake description."
                 ]);
             }
         }

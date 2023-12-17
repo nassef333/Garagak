@@ -31,9 +31,9 @@ class User extends Authenticatable
         return $this->coupons->contains($coupon);
     }
 
-    public function cars(): BelongsToMany
+    public function carModels()
     {
-        return $this->belongsToMany(Car::class)
+        return $this->belongsToMany(CarModel::class, 'car_user', 'user_id', 'model_id')
             ->withPivot(['color', 'plate'])
             ->withTimestamps();
     }

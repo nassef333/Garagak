@@ -19,7 +19,7 @@ class CarSeries extends Model
 
     public function cars(): BelongsToMany
     {
-        return $this->belongsToMany(Car::class)
+        return $this->belongsToMany(CarModel::class)
         ->withTimestamps();
     }
 

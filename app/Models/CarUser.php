@@ -12,10 +12,12 @@ class CarUser extends Model
 
     protected $fillable = [
         'user_id',
-        'car_id',
+        'model_id',
         'color',
         'plate',
     ];
+
+    protected $table = 'car_user';
 
     public function user(): BelongsTo
     {
@@ -24,6 +26,6 @@ class CarUser extends Model
 
     public function car(): BelongsTo
     {
-        return $this->belongsTo(Car::class);
+        return $this->belongsTo(CarModel::class);
     }
 }

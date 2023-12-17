@@ -31,6 +31,6 @@ class UserCarSale extends Model
 
     public function car(): BelongsTo
     {
-        return $this->belongsTo(Car::class);
+        return $this->belongsTo(CarModel::class);
     }
 }

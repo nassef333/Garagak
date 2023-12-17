@@ -15,7 +15,7 @@ class Brand extends Model
         'origin'
     ];
 
-    public function carSeries(): HasMany
+    public function carSeries()
     {
         return $this->hasMany(CarSeries::class);
     }

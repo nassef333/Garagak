@@ -20,7 +20,7 @@ class DatabaseSeeder extends Seeder
             UserSeeder::class,
             BrandSeeder::class,
             CarSeriesSeeder::class,
-            CarSeeder::class,
+            ModelSeeder::class,
             CouponSeeder::class,
             GarageSeeder::class,
             PriceSeeder::class,

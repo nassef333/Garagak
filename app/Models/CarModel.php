@@ -8,7 +8,7 @@ use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 use Illuminate\Database\Eloquent\Relations\HasMany;
 
-class Car extends Model
+class CarModel extends Model
 {
     use HasFactory;
 
@@ -17,6 +17,8 @@ class Car extends Model
         'description',
         'car_series_id',
     ];
+
+    protected $table = 'models';
 
     public function users(): BelongsToMany
     {

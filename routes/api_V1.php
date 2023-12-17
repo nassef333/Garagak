@@ -1,6 +1,6 @@
 <?php
 
-require 'user.php';
+require 'Mobile.php';
 require 'auth.php';
-require 'admin.php';
+require 'Dashboard.php';
 require 'otp.php';

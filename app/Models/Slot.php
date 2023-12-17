@@ -22,6 +22,6 @@ class Slot extends Model
 
     public function currentCar(): BelongsTo
     {
-        return $this->belongsTo(Car::class, 'current_car_id');
+        return $this->belongsTo(CarModel::class, 'current_car_id');
     }
 }

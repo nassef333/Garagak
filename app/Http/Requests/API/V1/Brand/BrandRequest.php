@@ -1,15 +1,16 @@
 <?php
 
-namespace App\Http\Requests\API\V1\Auth;
+namespace App\Http\Requests\API\V1\Brand;
 
-use Illuminate\Foundation\Http\FormRequest;
-use Illuminate\Contracts\Validation\Validator;
 use App\Http\Controllers\API\Traits\APIResponse;
+use Illuminate\Contracts\Validation\Validator;
+use Illuminate\Foundation\Http\FormRequest;
 use Illuminate\Http\Exceptions\HttpResponseException;
 
-class UploadProfileImageRequest extends FormRequest
+class BrandRequest extends FormRequest
 {
     use APIResponse;
+
     /**
      * Determine if the user is authorized to make this request.
      */
@@ -21,14 +22,16 @@ class UploadProfileImageRequest extends FormRequest
     /**
      * Get the validation rules that apply to the request.
      *
-     * @return array<string, \Illuminate\Contracts\Validation\ValidationRule|array|string>
+     * @return array<string, \Illuminate\Contracts\Validation\ValidationRule|array<mixed>|string>
      */
     public function rules(): array
     {
         return [
-            'image' => ['required', 'file', 'mimes:jpeg,png,jpg,HEIC', 'max:4096'],
+            'name' => ['required', 'string', 'max:100'],
+            'origin' => ['required', 'string', 'max:255'],
         ];
     }
+
     public function failedValidation(Validator $validator)
     {
         throw new HttpResponseException($this->error(422, "Validation Errors", $validator->errors()));
